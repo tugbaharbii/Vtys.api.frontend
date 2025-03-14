@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş ve Kayıt</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="loginContainer">
+        <h2>Giriş Yap</h2>
+        <input type="text" placeholder="Kullanıcı Adı" id="loginUser">
+        <input type="password" placeholder="Şifre" id="loginPass">
+        <button onclick="login()">Giriş Yap</button>
+        <p>Hesabınız yok mu? <a href="#" onclick="showRegister()">Kayıt Ol</a></p>
+    </div>
+    
+    <div class="container" id="registerContainer" style="display: none;">
+        <h2>Kayıt Ol</h2>
+        <input type="text" placeholder="Kullanıcı Adı" id="registerUser">
+        <input type="password" placeholder="Şifre" id="registerPass">
+        <button onclick="register()">Kayıt Ol</button>
+        <p>Zaten hesabınız var mı? <a href="#" onclick="showLogin()">Giriş Yap</a></p>
+    </div>
+    
+    <script>
+        function showRegister() {
+            document.getElementById('loginContainer').style.display = 'none';
+            document.getElementById('registerContainer').style.display = 'block';
+        }
+        function showLogin() {
+            document.getElementById('registerContainer').style.display = 'none';
+            document.getElementById('loginContainer').style.display = 'block';
+        }
+        function login() {
+            window.location.href = 'welcome.html';
+        }
+        function register() {
+            alert('Kayıt işlemi tamamlandı! Giriş yapabilirsiniz.');
+            showLogin();
+        }
+    </script>
+</body>
+</html>
